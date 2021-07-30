@@ -3,6 +3,8 @@ import sys
 import time
 
 @lru_cache(maxsize=None)
+
+
 def fib(z):
 	if z == 0:
 		return 0
@@ -13,6 +15,7 @@ def fib(z):
 		prevv = fib(z-2)
 		ret = prev + prevv
 		return ret
+
 
 def san(z):
 	try:
@@ -27,7 +30,7 @@ def san(z):
 		an = fib(n)
 		return an
 	else: 
-		print("Calculation of term %d and beyond is not possible"%lim)
+		print("Calculation of term %d and beyond is not possible" % lim)
 		exit()
 
 
@@ -36,9 +39,9 @@ y = input("Which Fibonacci number do you want? ")
 start = time.time()
 ans = san(y)
 if ans < 1000:
-	print("The answer is %d"%ans)
+	print("The answer is %d" % ans)
 else:
-	print("The answer is %d, which is about %.2e"%(ans, ans))
+	print("The answer is %d, which is about %.2e" % (ans, ans))
 end = time.time()
 t = float((end - start)*1000000)
-print("Calculating took %.3f microsecond(s)"%t)
+print("Calculating took %.3f microsecond(s)" % t)
